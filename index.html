@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./image/王馨怡logo.png" />
+  <title>
+    宇宙无敌天上地下绝无仅有的最最最最可爱到爆的大宝贝是最棒的王馨怡
+  </title>
+  <link rel="stylesheet" href="./css/global.css" />
+  <link rel="stylesheet" href="lib/layui/css/layui.css" />
+  <!-- 小游戏音效 -->
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script src="./lib/jquery.js"></script>
+  <script src="./lib/layui/layui.js"></script>
+  <style>
+    body {
+      width: 100%;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loading">
+    <div>小游戏即将开始</div>
+  </div>
+
+  <div id="whole_container">
+
+    <div id="screen_one">
+      <canvas id="canvas_intro"></canvas>
+    </div>
+
+    <div id="screen_two">
+      <div id="canvas_container">
+
+        <canvas id="canvas_1" width="300" height="380"></canvas>
+        <canvas id="canvas_2" width="300" height="380"></canvas>
+        <canvas id="canvas_3" width="300" height="380" style="margin:0"></canvas>
+
+        <div id="valentines_text"></div>
+        <div id="rewind_text">回放中...</div>
+        <div id="replay_text">播放...</div>
+
+      </div>
+    </div>
+    <!-- 自定义页面 -->
+    <div id="screen_three">
+
+      <div id="end_container">
+        <input style="display:none;" id="your_message"></input>
+        <input style="display:none;" id="your_link"></input>
+        <!-- 头部 -->
+        <header>
+          <ul class="layui-nav" lay-filter="demo" style="margin-right: 10px">
+            <li class="layui-nav-item"><a href="javascript:;">首页</a></li>
+            <li class="layui-nav-item"><a href="javascript:;">最美的小甜</a></li>
+            <li class="layui-nav-item"><a href="javascript:;">甜甜的哥哥</a></li>
+          </ul>
+        </header>
+        <!-- 内容区 -->
+        <main></main>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    layui.use('element', function () {
+      var element = layui.element
+      //监听导航点击
+      element.on('nav(demo)', function (elem) {
+        console.log(elem) //得到当前点击的DOM对象
+      })
+    })
+  </script>
+  <script src="js/Key.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/popup.js"></script>
+  <script src="js/soundjs-0.6.0.min.js"></script>
+</body>
+
+</html>

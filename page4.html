@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./image/王馨怡logo.png" />
+  <title>小甜的照片墙</title>
+  <style type="text/css">
+    :root {
+      background: pink;
+      overflow-x: hidden;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    #ul {
+      position: relative;
+    }
+
+    #ul li {
+      vertical-align: top;
+      box-shadow: 0 0 5px #696969;
+      position: absolute;
+      transition: all 1s;
+      height: 300px;
+    }
+
+    #ul li img {
+      height: inherit;
+    }
+
+    #ul li.checked {
+      position: fixed;
+      left: 50% !important;
+      top: 450px !important;
+      transform: rotate(0deg) translate(-50%, -50%) scale(1.5, 1.5) !important;
+      z-index: 99 !important;
+      height: 600px;
+    }
+
+
+  </style>
+</head>
+
+
+<body>
+  <ul id="ul"></ul>
+  <script type="text/javascript">
+    window.addEventListener('load', function () {
+      //获取事件源
+      var ul = document.getElementById('ul');
+      //获取图片可活动区域
+      var windowW = document.documentElement.clientWidth - 340;
+      var windowH = 3000;
+      //循环遍历
+      for (var i = 0; i < 187; i++) {
+        //创建li标签
+        var li = document.createElement('li');
+        //追加到ul的子元素
+        ul.appendChild(li);
+        //创建img标签
+        var img = document.createElement('img');
+        li.appendChild(img);
+        // 动态插入图片
+        img.setAttribute('src', 'images/' + i + '.jpg');
+      }
+      //获取所有的li 
+      var allLi = ul.children;
+      //遍历
+      for (var j = 0; j < allLi.length; j++) {
+        //取出单个li
+        var li = allLi[j];
+        //随机获取位置
+        li.style.left = parseInt(Math.random() * windowW) + 'px';
+        li.style.top = parseInt(Math.random() * windowH) + 'px';
+        //获取随机角度
+        li.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+        //监听点击事件
+        li.addEventListener('click', function () {
+          for (var i = 0; i < allLi.length; i++) {
+            allLi[i].className = '';
+          }
+          this.className = 'checked';
+        });
+      }
+    })
+  </script>
+</body>
+
+</html>

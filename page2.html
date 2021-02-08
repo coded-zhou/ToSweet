@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="./image/王馨怡logo.png" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    :root{
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      background-image: url(./img/1.jpg);
+      max-width: 100%;
+      min-width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      position: absolute;
+      margin-left: 42%;
+      margin-top: 22%;
+      transform-style: preserve-3d;
+      transform: rotateX(13deg);
+      animation: move 5s linear infinite;
+    }
+
+    .minbox {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      left: 50px;
+      top: 30px;
+      transform-style: preserve-3d;
+    }
+
+    .minbox li {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .minbox li:nth-child(1) {
+      background: url(./img/01.png) no-repeat 0 0;
+      transform: translateZ(50px);
+    }
+
+    .minbox li:nth-child(2) {
+      background: url(./img/02.png) no-repeat 0 0;
+      transform: rotateX(180deg) translateZ(50px);
+    }
+
+    .minbox li:nth-child(3) {
+      background: url(./img/3.png) no-repeat 0 0;
+      transform: rotateX(-90deg) translateZ(50px);
+    }
+
+    .minbox li:nth-child(4) {
+      background: url(./img/04.png) no-repeat 0 0;
+      transform: rotateX(90deg) translateZ(50px);
+    }
+
+    .minbox li:nth-child(5) {
+      background: url(./img/05.png) no-repeat 0 0;
+      transform: rotateY(-90deg) translateZ(50px);
+    }
+
+    .minbox li:nth-child(6) {
+      background: url(./img/6.png) no-repeat 0 0;
+      transform: rotateY(90deg) translateZ(50px);
+    }
+
+    .maxbox li:nth-child(1) {
+      background: url(./img/1.png) no-repeat 0 0;
+      transform: translateZ(50px);
+    }
+
+    .maxbox li:nth-child(2) {
+      background: url(./img/2.png) no-repeat 0 0;
+      transform: translateZ(50px);
+    }
+
+    .maxbox li:nth-child(3) {
+      background: url(./img/03.png) no-repeat 0 0;
+      transform: rotateX(-90deg) translateZ(50px);
+    }
+
+    .maxbox li:nth-child(4) {
+      background: url(./img/4.png) no-repeat 0 0;
+      transform: rotateX(90deg) translateZ(50px);
+    }
+
+    .maxbox li:nth-child(5) {
+      background: url(./img/5.png) no-repeat 0 0;
+      transform: rotateY(-90deg) translateZ(50px);
+    }
+
+    .maxbox li:nth-child(6) {
+      background: url(./img/06.png) no-repeat 0 0;
+      transform: rotateY(90deg) translateZ(50px);
+    }
+
+    .maxbox {
+      width: 800px;
+      height: 400px;
+      position: absolute;
+      left: 0;
+      top: -20px;
+      transform-style: preserve-3d;
+
+    }
+
+    .maxbox li {
+      width: 200px;
+      height: 200px;
+      background: #fff;
+      border: 1px solid #ccc;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0.2;
+      transition: all 1s ease;
+    }
+
+    .maxbox li:nth-child(1) {
+      transform: translateZ(100px);
+    }
+
+    .maxbox li:nth-child(2) {
+      transform: rotateX(180deg) translateZ(100px);
+    }
+
+    .maxbox li:nth-child(3) {
+      transform: rotateX(-90deg) translateZ(100px);
+    }
+
+    .maxbox li:nth-child(4) {
+      transform: rotateX(90deg) translateZ(100px);
+    }
+
+    .maxbox li:nth-child(5) {
+      transform: rotateY(-90deg) translateZ(100px);
+    }
+
+    .maxbox li:nth-child(6) {
+      transform: rotateY(90deg) translateZ(100px);
+    }
+
+    .box:hover ol li:nth-child(1) {
+      transform: translateZ(300px);
+      width: 400px;
+      height: 400px;
+      opacity: 0.8;
+      left: -100px;
+      top: -100px;
+    }
+
+    .box:hover ol li:nth-child(2) {
+      transform: rotateX(180deg) translateZ(300px);
+      width: 400px;
+      height: 400px;
+      opacity: 0.8;
+      left: -100px;
+      top: -100px;
+    }
+
+    .box:hover ol li:nth-child(3) {
+      transform: rotateX(-90deg) translateZ(300px);
+      width: 400px;
+      height: 400px;
+      opacity: 0.8;
+      left: -100px;
+      top: -100px;
+    }
+
+    .box:hover ol li:nth-child(4) {
+      transform: rotateX(90deg) translateZ(300px);
+      width: 400px;
+      height: 400px;
+      opacity: 0.8;
+      left: -100px;
+      top: -100px;
+    }
+
+    .box:hover ol li:nth-child(5) {
+      transform: rotateY(-90deg) translateZ(300px);
+      width: 400px;
+      height: 400px;
+      opacity: 0.8;
+      left: -100px;
+      top: -100px;
+    }
+
+    .box:hover ol li:nth-child(6) {
+      transform: rotateY(90deg) translateZ(300px);
+      width: 400px;
+      height: 400px;
+      opacity: 0.8;
+      left: -100px;
+      top: -100px;
+    }
+
+    @keyframes move {
+      0% {
+        transform: rotateX(13deg) rotateY(0deg);
+      }
+
+      100% {
+        transform: rotateX(13deg) rotateY(360deg);
+      }
+    }
+
+    #text {
+      width: 600px;
+      margin: 30px auto;
+      font-size: 22px;
+      color: pink;
+    }
+
+    #btn {
+      /* display: block; */
+      width: 290px;
+      margin: 0 auto;
+      height: 60px;
+      border-radius: 30px;
+      font-size: 22px;
+      background-color: pink;
+      text-decoration: none;
+      opacity: 0.6;
+      color: #111;
+      line-height: 60px;
+      text-align: center;
+      display: none;
+    }
+  </style>
+
+  <title>甜甜进来看看</title>
+
+  <script type="text/javascript" src="lib/jquery.js"></script>
+  <script type="text/javascript" src="lib/three.js"></script>
+
+</head>
+
+<body>
+
+  <embed src="./audio/告白气球.mp3" hidden="true" autostart="true" loop="true">
+  <div class="box">
+    <ul class="minbox">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <ol class="maxbox">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ol>
+  </div>
+  <div id="text"></div>
+  <a href="page3.html" id="btn">看看华子为你的收集哥哥</a>
+  <script type="text/javascript">
+    document.writeln(
+      "<div class=\"snow\" style=\"height:100vh; position:absolute; left:0px; top:0px; right:0px; bottom:0px; pointer-events: none;z-index: 1;\"><canvas width=\"1904\" height=\"913\" style=\"position: absolute;left: 0;top: 0;\"></canvas></div>"
+    );
+
+    $(function () {
+
+      if (/MSIE 6|MSIE 7|MSIE 8/.test(navigator.userAgent)) {
+        return
+      }
+      var container = document.querySelector(".snow");
+      // IE9-10 pointer-events兼容
+      if (/MSIE 9|MSIE 10/.test(navigator.userAgent)) {
+        $(container).bind('click mousemove', function (evt) {
+          this.style.display = 'none';
+          var x = evt.pageX,
+            y = evt.pageY
+          if ($(document).scrollTop() > 0 || $(document).scrollTop() > 0) {
+            x = x - $(document).scrollLeft() + 1
+            y = y - $(document).scrollTop() + 1
+          }
+          evt.preventDefault();
+          evt.stopPropagation();
+          var under = document.elementFromPoint(x, y);
+          var evtType = evt.type === 'click' ? 'click' : 'mouseenter'
+          if (evt.type === 'click') {
+            $(under)[0].click();
+          } else {
+            $(under).trigger('mouseenter');
+          }
+          $('body').css('cursor', 'default')
+          this.style.display = '';
+          return false;
+        });
+      }
+      var containerWidth = $(container).width();
+      var containerHeight = $(container).height();
+      var particle;
+      var camera;
+      var scene;
+      var renderer;
+      var mouseX = 0;
+      var mouseY = 0;
+      var windowHalfX = window.innerWidth / 2;
+      var windowHalfY = window.innerHeight / 2;
+      var particles = [];
+      var particleImages = [new Image(), new Image(), new Image(), new Image(), new Image()];
+      // particleImages[0].src = "./images/snow1.png";
+      // particleImages[1].src = "./images/snow2.png";
+      // particleImages[2].src = "./images/snow3.png";
+      // particleImages[3].src = "./images/snow4.png";
+      // particleImages[4].src = "./images/snow5.png";
+      particleImages[0].src = "img/151375665240370100.png";
+      particleImages[1].src = "img/151375668550091372.png";
+      particleImages[2].src = "img/151375669416355455.png";
+      particleImages[3].src = "img/151375670204115466.png";
+      particleImages[4].src = "img/151375671039447316.png";
+      var snowNum = 300;
+
+      function init() {
+        camera = new THREE.PerspectiveCamera(75, containerWidth / containerHeight, 1, 10000);
+        camera.position.z = 1000;
+        scene = new THREE.Scene();
+        scene.add(camera);
+        renderer = new THREE.CanvasRenderer();
+        renderer.setSize(containerWidth, containerHeight);
+        for (var i = 0; i < snowNum; i++) {
+          var material = new THREE.ParticleBasicMaterial({
+            map: new THREE.Texture(particleImages[i % 5])
+          });
+          particle = new Particle3D(material);
+          particle.position.x = Math.random() * 2000 - 1000;
+          particle.position.y = Math.random() * 2000 - 1000;
+          particle.position.z = Math.random() * 2000 - 1000;
+          particle.scale.x = particle.scale.y = 1;
+          scene.add(particle);
+          particles.push(particle)
+        }
+        container.appendChild(renderer.domElement);
+        document.addEventListener("mousemove", onDocumentMouseMove, false);
+        document.addEventListener("touchstart", onDocumentTouchStart, false);
+        document.addEventListener("touchmove", onDocumentTouchMove, false);
+        setInterval(loop, 1000 / 50)
+      }
+
+      function onDocumentMouseMove(event) {
+        mouseX = event.clientX - windowHalfX;
+        mouseY = event.clientY - windowHalfY
+      }
+
+      function onDocumentTouchStart(event) {
+        if (event.touches.length === 1) {
+          event.preventDefault();
+          mouseX = event.touches[0].pageX - windowHalfX;
+          mouseY = event.touches[0].pageY - windowHalfY
+        }
+      }
+
+      function onDocumentTouchMove(event) {
+        if (event.touches.length === 1) {
+          event.preventDefault();
+          mouseX = event.touches[0].pageX - windowHalfX;
+          mouseY = event.touches[0].pageY - windowHalfY
+        }
+      }
+
+      function loop() {
+        for (var i = 0; i < particles.length; i++) {
+          var particle = particles[i];
+          // 滚动到楼层模块，减少雪花 （自定义）
+          if ($(window).scrollTop() < 1000) {
+            particle.scale.x = particle.scale.y = 1;
+          } else {
+            if (i > particles.length / 5 * 3) {
+              particle.scale.x = particle.scale.y = 0;
+            } else {
+              particle.scale.x = particle.scale.y = 0.8;
+            }
+          }
+          particle.updatePhysics();
+          with(particle.position) {
+            if (y < -1000) {
+              y += 2000
+            }
+            if (x > 1000) {
+              x -= 2000
+            } else {
+              if (x < -1000) {
+                x += 2000
+              }
+            }
+            if (z > 1000) {
+              z -= 2000
+            } else {
+              if (z < -1000) {
+                z += 2000
+              }
+            }
+          }
+        }
+        camera.position.x += (mouseX - camera.position.x) * 0.005;
+        camera.position.y += (-mouseY - camera.position.y) * 0.005;
+        camera.lookAt(scene.position);
+        renderer.render(scene, camera)
+      }
+      init()
+    });
+  </script>
+  <script>
+    var i = 0;
+    var str =
+      "能够遇见你是我最大的幸运，有了你生活变得丰富多彩，有了你，世界变得如此迷人；你是我的世界，我的世界是你，对我来说，不是在最美好的时光遇见了你，而是遇见你后都是最美好的时光！如果可以的话，我希望上天给我三个愿望：第一个愿望：我希望我有花不完的钱，第二个愿望：我希望我有一个非常好的身体，第三个愿望：我希望把我前两个愿望送给最美的甜甜小姐姐！";
+
+    window.onload = function typing() {
+      //获取div
+      var myDiv = document.getElementById("text");
+      myDiv.innerHTML += str.charAt(i);
+      i++;
+      var id = setTimeout(typing, 200);
+      if (i == str.length) {
+        clearTimeout(id);
+        $('#btn').css({
+          display: 'block'
+        });
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -409,23 +409,31 @@
     </div>
   </div>
   <script>
+    $('.grid-item').on('click', function () {
+      $('#show_img').attr('src', $(this).attr('src'))
+      $('#pop_up').css({
+        display: 'block'
+      })
+    })
+    $('#shut_down').on('click', function () {
+      $('#pop_up').css({
+        display: 'none'
+      })
+    })
+    var t
     window.onload = function () {
       $('#container').masonry({
         // itemSelector : 默认值是 .item ，指定哪些子元素将用作布局中的项元素(选择器)
         itemSelector: '.grid-item'
       })
-      $('.grid-item').on('click', function () {
-        $('#show_img').attr('src', $(this).attr('src'))
-        $('#pop_up').css({
-          display: 'block'
-        })
-      })
-      $('#shut_down').on('click', function () {
-        $('#pop_up').css({
-          display: 'none'
-        })
-      })
+      clearTimeout(t)
     }
+    t = setTimeout(function () {
+      $('#container').masonry({
+        // itemSelector : 默认值是 .item ，指定哪些子元素将用作布局中的项元素(选择器)
+        itemSelector: '.grid-item'
+      })
+    }, 1000)
   </script>
 </body>
 

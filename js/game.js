@@ -856,7 +856,7 @@ window.LEVEL_CONFIG = [
       { x: 0, y: 150, radius: 100 },
       { x: 300, y: 150, radius: 100 }
     ],
-    countdown: 90
+    countdown: 390
   },
 
   // HEART
@@ -873,7 +873,7 @@ window.LEVEL_CONFIG = [
       { x: 300, y: 300, radius: 145 }
     ],
     // SUPER HACK - for level 2, change timer so it's impossible to beat if you go BACKWARDS.
-    countdown: 200
+    countdown: 600
   },
 
   // U
@@ -883,6 +883,6 @@ window.LEVEL_CONFIG = [
     door: { x: 270, y: 75 },
     key: { x: 150, y: 270 },
     circles: [{ x: 150, y: 150, radius: 115 }],
-    countdown: 130
+    countdown: 230
   }
 ]
